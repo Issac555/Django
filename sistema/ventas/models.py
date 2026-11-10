@@ -5,7 +5,7 @@ from django.db import models
 #Se requiere crar la clase Producto
 class Producto(models.Model):
     categorias = [(1, "Tecnologia"),(2, "Hogar"),(3, "Alimentos"),(4, "Vestimenta"),(5, "Otros")]
-    #definir atributos
+    #definir atributos<
     nombre = models.CharField(max_length=10)
     #cuando se requiera añadir atributos a una clase ya existente debemos utuilizar
     #BLANK Y NULL
@@ -18,7 +18,7 @@ class Producto(models.Model):
     categoria = models.IntegerField(choices=categorias, default=5)
     
     # SE REQUIERE CREAR UN CAMPLO LLAMADO CATEGORIAS PARA SELECCIONA EL TIPO DE PRODUCTO
-    # REGISTROS, UTILICE/CHOICES
+    # REGISTROS, UTILICE/CHOICES    
     
     def __str__(self):
         return f"{self.nombre} - {self.stock}"
