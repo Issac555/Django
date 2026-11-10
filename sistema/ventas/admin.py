@@ -1,0 +1,24 @@
+from django.contrib import admin
+from .models import Producto
+# Register your models here.
+
+#admin.site.register(Producto)
+
+@admin.register(Producto)
+class ProductoAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'nombre',
+        'precio',
+        'stock',
+        'descripcion',
+        'categoria'
+    )
+
+    search_fields = ('nombre', 'descripcion', 'categoria')
+
+    ordering = ('id', )
+
+    list_filter = ('precio', 'stock',)
+
+    list_per_page = 5
